@@ -7,9 +7,6 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        {{-- Fonts --}}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
         {{-- Styles --}}
         <link rel="stylesheet" href="{{ mix('css/app.css') }}?v={{ time() }}">
 
@@ -19,6 +16,10 @@
 
         {{-- Font Awesome Icons --}}
         <script src="https://kit.fontawesome.com/cb4ddaf488.js" crossorigin="anonymous"></script>
+
+        {{-- Google Fonts --}}
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nunito:wght@200;300;400;700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     </head>
     <body class="font-sans antialiased">
         @inertia

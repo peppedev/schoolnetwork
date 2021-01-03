@@ -1,5 +1,5 @@
 <template>
-    <nav class="level" id="dbar">
+    <nav class="level mb-0" id="dbar">
         <div class="level-left">
             <inertia-link :href="to">
                 <i class="fas fa-chevron-left is-black is-size-4 ml-4 mr-3"></i>

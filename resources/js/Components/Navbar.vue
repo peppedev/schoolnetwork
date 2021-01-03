@@ -1,46 +1,46 @@
 <template>
     <b-navbar :shadow="true" :spaced="true" :centered="true">
         <template slot="brand">
-            <b-navbar-item>
+            <inertia-link class="navbar-item" href="/">
                 <img
                     class="ml-2 mr-3"
                     src="/icons/icon.svg"
                     alt="Studentsweek"
                 >
                 <h1 class="is-nunito is-regular is-size-5 is-black">StudentsWeek</h1>
-            </b-navbar-item>
+            </inertia-link>
         </template>
         <template slot="start">
-            <b-navbar-item href="#">
+            <inertia-link class="navbar-item" href="/">
                 {{ __('general.home') }}
-            </b-navbar-item>
-            <b-navbar-item href="#">
+            </inertia-link>
+            <inertia-link class="navbar-item" href="/docs">
                 {{ __('general.docs') }}
-            </b-navbar-item>
-            <b-navbar-item href="#">
+            </inertia-link>
+            <inertia-link class="navbar-item" href="/support">
                 {{ __('general.support') }}
-            </b-navbar-item>
+            </inertia-link>
         </template>
 
         <template slot="end">
-            <b-navbar-item tag="div" v-if="guest">
+            <b-navbar-item tag="div" v-if="!guest">
                 <div class="buttons">
-                    <a class="button is-primary">
+                    <inertia-link class="button is-primary" href="/dashboard">
                         <strong>{{ __('general.dashboard') }}</strong>
-                    </a>
-                    <a class="button is-light">
+                    </inertia-link>
+                    <a class="button is-light" @click="logout">
                         {{ __('general.logout') }}
                     </a>
                 </div>
             </b-navbar-item>
             <b-navbar-item tag="div" v-else>
                 <div class="buttons">
-                    <a class="button is-primary">
+                    <inertia-link class="button is-primary" href="/register">
                         <strong>{{ __('general.signup') }}</strong>
-                    </a>
-                    <a class="button is-light">
+                    </inertia-link>
+                    <inertia-link class="button is-light" href="/login">
                         {{ __('general.login') }}
-                    </a>
+                    </inertia-link>
                 </div>
             </b-navbar-item>
         </template>
@@ -52,6 +52,13 @@ export default {
     name: 'Navbar',
     props: {
         guest: Boolean
+    },
+    methods: {
+        logout() {
+            axios.post(route('logout').url()).then(response => {
+                window.location = '/';
+            });
+        }
     }
 }
 </script>

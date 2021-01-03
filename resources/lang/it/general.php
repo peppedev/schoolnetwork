@@ -6,5 +6,8 @@ return [
     'docs' => 'Documentazione',
     'login' => 'Accesso',
     'signup' => 'Registrazione',
-    'logout' => 'Esci'
+    'logout' => 'Esci',
+    'subscriptions' => 'Iscrizioni',
+    'hour' => 'Ora',
+    'day' => 'Giorno'
 ];

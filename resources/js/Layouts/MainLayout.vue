@@ -1,7 +1,7 @@
 <template>
   <div id="omega">
-        <navbar></navbar>
-        <main :role="mainRole" :class="mainClass" :id="mainId">
+        <navbar :guest="guest"></navbar>
+        <main :role="role" :class="page" :id="page">
             <slot></slot>
         </main>
   </div>
@@ -15,9 +15,9 @@ export default {
         Navbar
     },
     props: {
-        mainRole: String,
-        mainId: String,
-        mainClass: String
+        role: String,
+        page: String,
+        guest: Boolean
     }
 }
 </script>
