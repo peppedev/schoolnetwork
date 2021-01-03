@@ -47,7 +47,7 @@
                                     </div>
 
                                     <jet-dropdown-link :href="route('profile.show')">
-                                        Profile
+                                        Profilef
                                     </jet-dropdown-link>
 
                                     <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.jetstream.hasApiFeatures">

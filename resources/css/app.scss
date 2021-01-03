@@ -1,0 +1,123 @@
+// Importing Fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Roboto:wght@100;300;400&display=swap');
+
+// Font Classes
+.is-nunito {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+
+    &.is-light {
+        font-weight: 300;
+    }
+
+    &.is-bold {
+        font-weight: 700;
+    }
+}
+
+.is-roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+    &.is-light {
+        font-weight: 300;
+    }
+
+    &.is-lighter {
+        font-weight: 100;
+    }
+}
+
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Colors
+$black: #2F2F2F;
+$white: #fff;
+$creamwhite: #EBEBEB;
+$oblack: $white;
+$owhite: $black;
+
+$primary: #07C700;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+// Color Classes
+.is-black {
+    color: $black;
+}
+
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: mergeColorMaps(
+    (
+        "white": (
+            $white,
+            $black,
+        ),
+        "black": (
+            $black,
+            $white,
+        ),
+        "light": (
+            $light,
+            $light-invert,
+        ),
+        "dark": (
+            $dark,
+            $dark-invert,
+        ),
+        "primary": (
+            $primary,
+            $primary-invert,
+            $primary-light,
+            $primary-dark,
+        ),
+        "link": (
+            $link,
+            $link-invert,
+            $link-light,
+            $link-dark,
+        ),
+        "info": (
+            $info,
+            $info-invert,
+            $info-light,
+            $info-dark,
+        ),
+        "success": (
+            $success,
+            $success-invert,
+            $success-light,
+            $success-dark,
+        ),
+        "warning": (
+            $warning,
+            $warning-invert,
+            $warning-light,
+            $warning-dark,
+        ),
+        "danger": (
+            $danger,
+            $danger-invert,
+            $danger-light,
+            $danger-dark,
+        ),
+    ),
+    $custom-colors
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";

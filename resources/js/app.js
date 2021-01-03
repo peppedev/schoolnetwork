@@ -8,6 +8,18 @@ import { InertiaApp } from '@inertiajs/inertia-vue';
 import { InertiaForm } from 'laravel-jetstream';
 import PortalVue from 'portal-vue';
 
+// Importing Buefy
+import Buefy from 'buefy';
+
+Vue.use(Buefy);
+
+// Importing Laravel Lang Porting to Vue
+import { Lang } from 'laravel-vue-lang';
+
+Vue.use(Lang, {
+    fallback: 'en'
+});
+
 Vue.mixin({ methods: { route } });
 Vue.use(InertiaApp);
 Vue.use(InertiaForm);

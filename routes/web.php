@@ -14,7 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia\Inertia::render('Maintenance');
+});
+
+Route::get('/testing', function () {
+    $locale = Request::server('HTTP_ACCEPT_LANGUAGE');
+    $locale = explode(';', $locale)[0];
+    $locale = explode(',', $locale)[0];
+    $locale = explode('-', $locale)[0];
+    App::setLocale($locale);
+
+    return Inertia\Inertia::render('Testing');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
